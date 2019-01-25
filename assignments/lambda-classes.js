@@ -133,3 +133,9 @@ const carlos = new ProjectManager({
     gradClassName: `FSW PT1`,
     favInstructor: 'Fred'
   });
+
+
+  console.log(fred.speak())
+console.log(jasmine.speak())
+console.log(jasmine.sprintChallenge('math'))
+console.log(margo.debugsCode(jasmine, 'math'))
