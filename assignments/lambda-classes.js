@@ -46,3 +46,36 @@ class Student extends Person{
     }
 }
 
+class ProjectManager extends Instructor{
+    constructor(attributes){
+        super(attributes)
+        this.gradClassName = attributes.gradClassName
+        this.favInstructor = attributes.favInstructor
+    }
+    standUp(slack){
+        console.log(`${this.name} announces ${slack}, @channel study times!`)
+    }
+    debugsCode(student, subject){
+        console.log(`${this.name} debugs ${student.name}'s code on ${subject}`)
+    }
+}
+
+const fred = new Instructor({
+    name: 'Fred',
+    location: 'Bedrock',
+    age: 37,
+    gender: 'male',
+    favLanguage: 'JavaScript',
+    specialty: 'Front-end',
+    catchPhrase: `Don't forget the homies`
+  });
+
+const Jane = new Instructor({
+    name: 'Jane',
+    location: 'New Orleans',
+    age: 32,
+    gender: 'female',
+    favLanguage: 'Python',
+    specialty: 'Databases',
+    catchPhrase: `If its a number, I can add it`
+});
