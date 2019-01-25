@@ -42,7 +42,7 @@ class Student extends Person{
         console.log(`${this.name} has submitted a pull request for ${subject}`)
     }
     sprintChallenge(subject){
-        console.log(`${this.name} has begun sprint challenge for ${subject}`)
+        console.log(`${this.name} has begun a sprint challenge for ${subject}`)
     }
 }
 
@@ -60,6 +60,8 @@ class ProjectManager extends Instructor{
     }
 }
 
+//NEW INSTRUCTORS fred and jane
+
 const fred = new Instructor({
     name: 'Fred',
     location: 'Bedrock',
@@ -70,7 +72,7 @@ const fred = new Instructor({
     catchPhrase: `Don't forget the homies`
   });
 
-const Jane = new Instructor({
+const jane = new Instructor({
     name: 'Jane',
     location: 'New Orleans',
     age: 32,
@@ -79,3 +81,53 @@ const Jane = new Instructor({
     specialty: 'Databases',
     catchPhrase: `If its a number, I can add it`
 });
+
+//New Students blake and Jasmine
+
+const blake = new Student({
+    name: 'Blake',
+    location: 'Little Rock',
+    age: 22,
+    gender: 'Male',
+    previousBackground: 'Roof Sweeper',
+    className: 'FSW PT2',
+    favSubjects: ['Gardening', 'Herbology', 'Alchemy']
+  });
+
+const jasmine = new Student({
+    name: 'Jasmine',
+    location: 'Little Rock',
+    age: 22,
+    gender: 'female',
+    previousBackground: 'dishwasher',
+    className: 'FSW Fulltime 4',
+    favSubjects: ['Math', 'English', 'Grammer']
+  });
+
+  //NEW PROJECT MANAGERS MARGO AND CARLOS
+
+  const margo = new ProjectManager {
+    name: 'Margo',
+    location: 'Eastville',
+    age: 36,
+    gender: 'female',
+    favLanguage: 'JavaScript',
+    specialty: 'Front-end',
+    catchPhrase: `Keep on keeping on`,
+    gradClassName: `FSW FT1`,
+    favInstructor: 'Jasmine'
+  });
+}
+
+const carlos = new ProjectManager {
+    name: 'Carlos',
+    location: 'Brookton',
+    age: 29,
+    gender: 'male',
+    favLanguage: 'JavaScript',
+    specialty: 'Back-end',
+    catchPhrase: `Hustle till you drop`,
+    gradClassName: `FSW PT1`,
+    favInstructor: 'Fred'
+  });
+}
