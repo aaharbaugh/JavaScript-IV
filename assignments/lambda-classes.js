@@ -24,8 +24,20 @@ class Instructor extends Person{
         console.log(`Today we are going to be learning about ${subject}`)
     }
     grade(student, subject){
-        let newGrade = Math.floor(Math.random() * 5)
-        console.log(`${student.name} recieves a score of ${newGrade} on ${subject} and now has a ${student.grade}`)
+        //create a random grade number. 
+        let randomNum = Math.floor(Math.random() * 10);
+            if(randomNum > 5){
+                randomNum *= 1;
+            } else {
+                randomNum *= -1
+            }
+        //check if grade to make sure grade doesnt go over 100 
+        if((student.grade + randomNum) > 100 ){
+            student.grade = 100
+        } else {
+            student.grade += randomNum
+        }
+        console.log(`${student.name} recieves a score of ${randomNum} on ${subject} and now has a ${student.grade}`)
     }
 }
 
@@ -45,6 +57,13 @@ class Student extends Person{
     }
     sprintChallenge(subject){
         console.log(`${this.name} has begun a sprint challenge for ${subject}`)
+    }
+    graduate(){
+        if(this.grade < 70){
+            console.log(`Unfortunately ${this.name} has a grade of ${this.grade}. ${this.name} may not graduate at this time`)
+        } else {
+            console.log(`We are pleased to announce that ${this.name} has graduated from the school with a grade of ${this.grade}`)
+        }
     }
 }
 
@@ -94,7 +113,7 @@ const blake = new Student({
     previousBackground: 'Roof Sweeper',
     className: 'FSW PT2',
     favSubjects: ['Gardening', 'Herbology', 'Alchemy'],
-    grade: 92
+    grade: 65
   });
 
 const jasmine = new Student({
@@ -136,6 +155,12 @@ const carlos = new ProjectManager({
 
 
   console.log(fred.speak())
-console.log(jasmine.speak())
-console.log(jasmine.sprintChallenge('math'))
-console.log(margo.debugsCode(jasmine, 'math'))
+  console.log(jasmine.speak())
+  console.log(jasmine.sprintChallenge('math'))
+  console.log(margo.debugsCode(jasmine, 'math'))
+
+  //stretch task with grades 
+  fred.grade(blake,'math')
+  blake.graduate()
+  fred.grade(jasmine,'math')
+  jasmine.graduate()
