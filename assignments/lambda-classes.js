@@ -24,7 +24,8 @@ class Instructor extends Person{
         console.log(`Today we are going to be learning about ${subject}`)
     }
     grade(student, subject){
-        console.log(`${student.name} recieves a perfect score on ${subject}`)
+        let newGrade = Math.floor(Math.random() * 5)
+        console.log(`${student.name} recieves a score of ${newGrade} on ${subject} and now has a ${student.grade}`)
     }
 }
 
@@ -34,6 +35,7 @@ class Student extends Person{
         this.previousBackground = attributes.previousBackground
         this.className = attributes.className
         this.favSubjects = attributes.favSubjects
+        this.grade = attributes.grade
     }
     listSubjects(){
         this.favSubjects.forEach(subject => console.log(subject))
@@ -91,7 +93,8 @@ const blake = new Student({
     gender: 'Male',
     previousBackground: 'Roof Sweeper',
     className: 'FSW PT2',
-    favSubjects: ['Gardening', 'Herbology', 'Alchemy']
+    favSubjects: ['Gardening', 'Herbology', 'Alchemy'],
+    grade: 92
   });
 
 const jasmine = new Student({
@@ -101,12 +104,13 @@ const jasmine = new Student({
     gender: 'female',
     previousBackground: 'dishwasher',
     className: 'FSW Fulltime 4',
-    favSubjects: ['Math', 'English', 'Grammer']
+    favSubjects: ['Math', 'English', 'Grammer'],
+    grade: 100
   });
 
   //NEW PROJECT MANAGERS MARGO AND CARLOS
 
-  const margo = new ProjectManager {
+  const margo = new ProjectManager({
     name: 'Margo',
     location: 'Eastville',
     age: 36,
@@ -115,11 +119,10 @@ const jasmine = new Student({
     specialty: 'Front-end',
     catchPhrase: `Keep on keeping on`,
     gradClassName: `FSW FT1`,
-    favInstructor: 'Jasmine'
+    favInstructor: 'Jane'
   });
-}
 
-const carlos = new ProjectManager {
+const carlos = new ProjectManager({
     name: 'Carlos',
     location: 'Brookton',
     age: 29,
@@ -130,4 +133,3 @@ const carlos = new ProjectManager {
     gradClassName: `FSW PT1`,
     favInstructor: 'Fred'
   });
-}
